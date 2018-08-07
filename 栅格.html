@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>十二栅格布局</title>
+    <style>
+        /*
+            grid-container  栅格容器
+            row             每行容器
+                            让 col 相对 row 的 width( 也等于 container 的 content width )消除浮动影响;
+            col             栅格元素
+                            写class 先大后小 
+
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container{
+            width: 100%;
+            box-sizing: border-box; 
+            padding: 10px;
+            border: 1px solid #999; 
+        }   
+        .row:before,.row:after{
+            content: " ";
+            display: table;
+            clear: both;
+        }
+
+        [class*="col-"]{
+            float: left;
+            box-sizing: border-box; 
+            padding:10px;
+            min-height: 1px;
+            background-color: #fff;
+            border: 1px solid #080;
+        }
+        p{  
+            box-sizing: border-box; 
+            height: 50px;
+            background-color: #eee;
+            border: 1px solid #999; 
+        }
+        .col-md-1{width: 8.33%;}
+        .col-md-2{width: 16.66%;}
+        .col-md-3{width: 25%;}
+        .col-md-4{width: 33.33%;}
+        .col-md-5{width: 41.66%;}
+        .col-md-6{width: 50%;}
+        .col-md-7{width: 58.33%;}
+        .col-md-8{width: 66.66%;}
+        .col-md-9{width: 75%;}
+        .col-md-10{width: 83.33%;}
+        .col-md-11{width: 91.66%;}
+        .col-md-12{width: 100%;}
+        @media all and (max-width:768px){
+        .col-xs-1{width: 8.33%;}
+        .col-xs-2{width: 16.66%;}
+        .col-xs-3{width: 25%;}
+        .col-xs-4{width: 33.33%;}
+        .col-xs-5{width: 41.66%;}
+        .col-xs-6{width: 50%;}
+        .col-xs-7{width: 58.33%;}
+        .col-xs-8{width: 66.66%;}
+        .col-xs-9{width: 75%;}
+        .col-xs-10{width: 83.33%;}
+        .col-xs-11{width: 91.66%;}
+        .col-xs-12{width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="row">
+            <div class="col-md-4 col-xs-6"><p>col-md-4 col-xs-6</p></div>
+            <div class="col-md-4 col-xs-6"><p>col-md-4 col-xs-6</p></div>
+            <div class="col-md-4 col-xs-12"><p>col-md-4 col-xs-12</p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-3"><p>col-md-3 col-xs-3</p></div>
+            <div class="col-md-6 col-xs-6"><p>col-md-6 col-xs-6</p></div>
+            <div class="col-md-3 col-xs-3"><p>col-md-6 col-xs-6</p></div>           
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-xs-2"><p>col-md-1 col-xs-2</p></div>
+            <div class="col-md-1 col-xs-2"><p>col-md-1 col-xs-2</p></div>
+            <div class="col-md-2 col-xs-8"><p>col-md-2 col-xs-8</p></div>
+            <div class="col-md-2 col-xs-3"><p>col-md-2 col-xs-3</p></div>
+            <div class="col-md-6 col-xs-3"><p>col-md-6 col-xs-3</p></div>           
+        </div>      
+    </div>    
+</body>
+</html>
