@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex布局</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        font-size: 24px;
+      }
+    </style>
+</head>
+<body>
+    <!-- 滑动展开 -->
+    <style>
+       .flex{
+          /* 基本样式 */
+          width: 350px;
+          height: 200px;
+          border: 1px solid #555;
+          font: 14px Arial;
+
+          /*  建立弹性框 */
+          display: -webkit-flex;
+          -webkit-flex-direction: row;
+
+          display: flex;
+          flex-direction: row;
+       }
+
+       .flex > div{
+          -webkit-flex: 1 1 auto;
+          flex: 1 1 auto;/* 350-260 三等分 */
+
+          width: 30px; /* 让过渡表现良好。（从/到"width:auto"的过渡
+                          至少在 Gecko 和 Webkit 上是有 bug 的。
+                          更多信息参见 http://bugzil.la/731886 ） */
+
+          -webkit-transition: width 0.7s ease-out;
+          transition: width 0.7s ease-out;
+       }
+
+       /* colors */
+       .flex > div:nth-child(1){ background : #009246; }
+       .flex > div:nth-child(2){ background : #F1F2F1; }
+       .flex > div:nth-child(3){ background : #CE2B37; }
+
+       .flex > div:hover{
+            width: 200px;
+       }   
+   </style>
+    <p>滑动展开</p>
+    <div class="flex">
+        <div>uno</div>
+        <div>due</div>
+        <div>tre</div>
+    </div>
+
+    <br>
+    <!-- 圣杯 -->
+    <p>圣杯</p>
+    <style>
+
+        #main {
+          min-height: 200px;
+          margin: 0px;
+          padding: 0px;
+
+          display: -webkit-flex;
+          display:         flex;
+          -webkit-flex-flow: row;
+                 flex-flow: row;
+        }
+
+        #main > article {
+          margin: 4px;
+          padding: 5px;
+          border: 1px solid #cccc33;
+          border-radius: 7pt;
+          background: #dddd88;
+
+          -webkit-flex: 3 1 60%;
+                 flex: 3 1 60%;
+          -webkit-order: 2;
+                 order: 2;
+        }
+
+        #main > nav {
+          margin: 4px;
+          padding: 5px;
+          border: 1px solid #8888bb;
+          border-radius: 7pt;
+          background: #ccccff;
+
+          -webkit-flex: 1 6 20%;
+                 flex: 1 6 20%;
+          -webkit-order: 1;
+                 order: 1;
+        }
+
+        #main > aside {
+          margin: 4px;
+          padding: 5px;
+          border: 1px solid #8888bb;
+          border-radius: 7pt;
+          background: #ccccff;
+
+          -webkit-flex: 1 6 20%;
+                 flex: 1 6 20%;
+          -webkit-order: 3;
+                 order: 3;
+        }
+
+        /* 窄到已不足以支持三栏 */
+        @media all and (max-width: 640px) {
+            #main, #page {
+              -webkit-flex-flow: column;
+                      flex-direction: column;
+            }
+
+            #main > article, #main > nav, #main > aside {
+              /* 恢复到文档内的自然顺序 */
+              -webkit-order: 0;
+                      order: 0;
+            }
+
+            #main > nav, #main > aside{
+              min-height: 50px;
+              max-height: 50px;
+            }
+        }
+    </style>
+    <div id='main'>
+      <article>article</article>
+      <nav>nav</nav>
+      <aside>aside</aside>
+    </div>
+
+    <!-- block居中 -->
+    <p>block元素居中</p>
+    <style>
+      .flex3{
+        border: 1px solid #f00;
+        height: 100px;
+
+        display: flex;
+        align-items: center;     /* y */
+        justify-content: center; /* x */
+      }
+      .flex3>div{
+        border: 1px solid #f00;
+        width: 40px;
+        height: 40px;
+      }
+    </style>
+    <div class="flex3">
+      <div></div>
+    </div>
+    <br>
+
+    <!-- 导航条 -->
+    <p>导航条</p>
+    <style>
+      .flex4,.flex5{
+        display: flex;
+        border: 1px solid #f00;
+      }
+      .push-right{
+        margin-left: auto;  /* flex 容器默认是 justify-content:flex-start; margin-X:auto会占据尽可能大的空间*/
+                            /* 所以 page3 margin-right: auto; 也是同样效果 */
+      }
+      .flex5>li{
+        flex: auto;
+      }
+
+      .flex4>li,.flex5>li{
+        border: 1px solid #080;
+        list-style: none;
+        padding: 10px;
+      }
+    </style>
+    <ul class="flex4">
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3 is longer</a></li>
+      <li class="push-right"><a href="#">Page 4</a></li>
+      <li><a href="#">Page 5</a></li>
+    </ul>      
+    <ul class="flex5">
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3 is longer</a></li>
+      <li><a href="#">Page 4</a></li>
+    </ul>  
+    <br>
+
+    <!-- ===== 下面两个例子是给一行中某个item设置flex-grow，使其尽可能延展 ==== -->
+    <!-- Media objects -->
+    <p>Media objects</p>
+    <style>
+      .flex6{
+        display: flex;
+        border: 1px solid #080;
+      }
+      .flex6>.content{
+        /*flex: 1 1 0;*/
+        flex-grow: 1;
+        flex-basis: 0;
+        padding: 10px;
+      }
+      /*.flex6>.content{
+        flex: 3;
+      }
+      .flex6>.image{
+        flex: 1;
+      }*/
+      .flex6>.image>img{
+        max-width: 100px;
+      }
+    </style>
+    <div class="flex6">
+      <div class="image">
+        <img src="https://placehold.it/120x120">
+      </div>
+      <div class="content">This is the content of my media object. Items directly inside the flex container will be aligned to flex-start. This is the content of my media object. Items directly inside the flex container will be aligned to flex-start.</div>
+    </div>
+    <br>
+    <!-- 搜索框 -->
+    <p>搜索框</p>
+    <style>
+      .flex7{
+        display: flex;
+      }
+      .flex7>input[type="text"] {
+        flex: 1 1 auto;
+        /*flex-grow: 1; 就行*/
+      }
+    </style>
+    <div class="flex7">
+      <label for="text">Label</label>
+      <input type="text" id="text">
+      <input type="submit" value="Send">
+    </div>
+
+</body>
+</html>

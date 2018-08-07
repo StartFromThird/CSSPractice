@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+        
+        /* 
+        flex容器
+            flex-direction：主轴方向是水平 row 还是垂直 column
+            flex-wrap：指定可伸缩项是否折行
+            flex-flow：以上两个属性的简写形式
+
+            justify-content：指定可伸缩项在主轴方向上的对齐方式
+                            flex-star/flex-end/center/space-between/space-around
+            align-items：指定可伸缩项在辅轴方向上的对齐方式
+
+            align-content：指定【多行】可伸缩项在辅轴方向上的对齐方式
+
+        flex子元素
+
+            剩余宽度 = 容器宽度 - 所有项宽度
+            flex-grow： 指定当前项如何扩展 
+                        剩余宽度>0
+                        当前项可分得的剩余空间 = ( 当前项flex-grow值/所有项flex-grow值之和 ) * 剩余总宽度
+            flex-shrink：指定当前项如何收缩 
+                        剩余宽度<0
+                        当前项收缩的宽度 = ( 当前项`flex-shrink` * 当前项`flex-basis` / 所有项`flex-shrink` * 与各自`flex-basis`乘积之和  ) * 需收缩的总宽度
+            flex-basis：指定分配剩余空间之前当前项的初始大小
+                        所有可伸缩项的flex-basis都设置为0，那就意味着这些项不会参与第一次容器空间的分配。
+                        容器的全部宽度都会进入二次分配环节。利用这一点，可以实现各伸缩项宽度的绝对平均化。
+
+            flex：以上三个属性的简写形式
+
+            order：指定当前项在容器中出现的次序,
+                   默认是0，可为负数，order相同, item排序看html写法
+            align-self: 单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。
+        */
+        .container{
+            width: 100vw;
+            min-height: 200px;
+            margin: 10px 0;    
+            background: #ccc;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /*flex-flow: row wrap;*/
+            justify-content: space-between;
+            align-items: flex-end;
+            align-content: space-around;
+        }
+        .item{
+            width: 200px;
+            height: 40px;
+            box-sizing: border-box;
+            border: 1px solid #f00;
+            /*align-self: auto;*/
+        }
+        /*.item2{
+            width: 400px;
+        }*/
+
+        .itemY{
+            align-self: flex-start;
+        }
+
+        .order-1{
+            order: -1;
+        }
+        .order2{
+            order: 2;
+        }
+
+        .nowrap{
+            flex-wrap: nowrap;
+        }
+
+        .higher{
+            height: 60px;
+        }        
+        .shorter{
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    flex-wrap: nowrap 不换行；
+    align-items: 辅轴方向 单行 行内排列 -->
+<h3>flex-wrap: nowrap;</h3>
+<div class="container nowrap">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item higher">3</div>
+    <div class="item">4</div>
+    <div class="item shorter">5</div>
+</div>
+<!-- 
+    flex-wrap: wrap 换行
+    align-content: 辅轴方向 多行 行间排列 -->
+<h3>flex-wrap:wrap; 个别item设order / align-self</h3>
+<div class="container">
+    <div class="item">1</div>
+    <div class="item order2">2</div>
+    <div class="item order2 higher">3</div>
+    <div class="item order-1">4</div>
+    <div class="item itemY shorter">5</div>
+    <div class="item">6</div>
+</div>
+
+<!-- flex-grow: 默认0，不拓展;剩余space依据 flex-grow值 等比分布 -->
+<style>
+    .double-width{
+        width: 400px;
+    }
+    .grow1{
+        flex-grow: 1;
+    }    
+    .grow2{
+        flex-grow: 2;
+    }    
+    .grow3{
+        flex-grow: 3;
+    }    
+</style>
+<h3>flex-grow 分得的剩余空间 1:1:2</h3>
+<div class="container">
+    <div class="item grow1">1</div>
+    <div class="item grow1">1</div>
+    <div class="item double-width grow2">2</div>
+</div>
+
+<!-- flex-shrink: 默认1, 会收缩;剩余space依据 flex-grow值 等比分布 -->
+<style>
+    .shrink1{
+        flex-shrink: 1;
+    }
+    .shrink2{
+        flex-shrink: 2;
+    }
+    .shrink3{
+        flex-shrink: 3;
+    }
+</style>
+
+<h3>flex-shrink 收缩的宽度 1:1:2:2*2</h3>
+<div class="container nowrap">
+    <div class="item shrink1">1</div>
+    <div class="item shrink1">1</div>
+    <div class="item shrink2">2</div>
+    <div class="item double-width shrink2">2</div>
+    <!-- <div class="item double-width shrink3">3</div> -->
+</div>
+MDN:https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
+<br>
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Mixins
+<br>
+原理图：https://s1.ssl.qhres.com/static/4e975595aab09707.svg 
+<br>
+Flexbox，终于可以承认自己明白了：https://lisongfeng.cn/post/three-key-properties-to-understand-flexbox.html
+
+</body>
+</html>
