@@ -1,0 +1,21 @@
+<style>
+    /* 多行溢出 */
+    /* -webkit-line-clamp 只留几行 */
+    .summary{
+        overflow: hidden;     
+        display: -webkit-box;
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+    }
+    /* 单行溢出 */
+    /* white-space 防止换行 */    
+    .title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;        
+    }
+</style>
+<p>多行省略</p>
+<div class="summary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium aspernatur, assumenda obcaecati repudiandae quas voluptates nobis quo quod iure qui quisquam ab facere. Iste debitis sint, sit explicabo iusto ullam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, delectus qui iste molestias aperiam doloremque ipsam at corporis facere velit, sit exercitationem? Magnam atque totam cupiditate vitae blanditiis necessitatibus fugit?</div>
+<p>单行省略</p>
+<div class="title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi quam ducimus nesciunt explicabo esse, ad sapiente optio, quis placeat consequatur exercitationem ullam ut non totam iste deleniti, natus molestias! Deserunt!</div>
