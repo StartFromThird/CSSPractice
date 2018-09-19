@@ -1,0 +1,98 @@
+@import (reference) "components/mixins.less";
+
+/*banner*/
+.recommendbanner{
+	.line(top,1px,@bg-green);
+	img{
+		width: 100%;
+	}
+}
+/*form*/
+.leftform>div,
+.rightform>article{
+	background: #fff;
+	border: 1px solid #999;
+}
+/*leftform*/
+.leftform{
+	ul li{
+		margin: 0 auto;
+		width: 5rem;
+		height: 2.5rem;
+		.single-text(0.7rem,2.5rem);
+		color: @ft-green;
+		cursor: pointer;
+		&:before{			
+			.icon-dot(0.4rem,0.4rem);
+			.rounded-corners(0.4rem);
+			display: inline-block;
+			margin-right: 4px;
+			border: 1px solid @br-gold;
+		}
+	}
+	ul:hover .active{
+		color: @ft-green;
+		&:before{
+			background-color: #fff;
+		}
+	}
+	ul li:hover,
+	ul li.active,
+	ul li.active:hover{
+		color: @ft-gold;
+		&:before{
+			background-color: @bg-gold;
+		}
+	}
+	.title{
+		width: 100%;
+		height: 3rem;
+		border-bottom: 1px solid #999;
+		h3{
+			width: 100%;
+			.nav-text (3rem);
+			font-size: 0.8rem;		
+			text-align: center;
+			color: #000;
+			text-decoration: none;		
+		}
+		&:before{
+			display: none;
+		}	
+	}
+}
+@media screen and (max-width: 767px){	
+	.leftform ul>li{
+		width: 7rem;
+	}
+}
+/*rightform*/
+article{
+	p{
+		margin-bottom: 1rem;
+		.single-text(0.7rem,1.5rem);
+		color: @ft-grey;
+	}
+	.intro{
+		position: relative;
+		padding:1rem 3rem; 
+		p{
+			margin-left: 9rem;
+		}
+	}
+	.leftpic{
+		position: absolute;
+		top: 50%;
+		margin-top: -1.3rem;
+		width: 9rem;
+		img{
+			width: 80%;
+			margin: 0 auto;
+		}
+	}
+	.detail{
+		padding: 2rem 3rem;
+		.line(top,1px,@br-bgrey);
+	}
+}
+

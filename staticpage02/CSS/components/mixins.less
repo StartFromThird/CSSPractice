@@ -1,0 +1,137 @@
+//Base层&common层公用变量
+@fixhead-H:40px;
+@nav-H:100px;
+@nav-xs-H:50px;
+@gap:15px;
+
+@r:20rem;
+@ft-min:12px;
+@ft-small:14px;
+@ft-nor:16px;
+@ft-big:18px;
+//颜色 ft-字体 bg-背景 br-边框
+@ft-black:#000;
+@ft-gold:#ff650e;
+@ft-green:#29b078;
+@ft-grey:#999;
+@ft-red:#f01400;
+@ft-white:#fff;
+
+@bg-white:#fff;
+@bg-grey:#fafafa;
+@bg-green:#29b078;
+@bg-gold:#f9a372;
+
+@br-grey:#d0d6d9;
+@br-bgrey:#999;
+@br-gold:#ff650e;
+
+html,body{
+	font-size: 20px;
+	font-family:sans-serif;
+}
+.borderbox{
+	width: 100%;
+	box-sizing: border-box;	
+	-moz-box-sizing: border-box; /* Firefox */
+	-webkit-box-sizing: border-box; /* Safari */
+}
+.flex-container(@x:space-between,@y:center){
+	display: flex;
+	flex-flow: row;
+	justify-content: @x;
+	align-content: @y; 
+}
+
+.fix-top{
+	position: fixed;
+	top: 0px;
+}
+.fix-bottom{
+	position: fixed;
+	bottom: 0px;	
+}
+//单行文字
+.single-text (@fontsize:16px,@lineh:1){
+	font-size: @fontsize;
+	line-height: @lineh;
+}
+.nav-text (@fontsize:16px){
+	height: @fontsize;
+	line-height: @fontsize;
+}
+//有图icon	
+.icon (@h:12px,@w:12px,@y:top,@size:100%,@display:inline-block) {
+	display: @display;
+	height: @h;
+	width: @w;
+	vertical-align: @y;
+	background-size: @size;
+}
+//无图icon 三角 圆
+.icon-dot(@w:12px,@h:12px){
+	display: block;
+	width: @w;
+	height: @h;
+	content: " ";
+}
+//
+.rounded-corners (@radius: 6px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+//居中
+.vertical-center{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%); 
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+}
+.xy-center{
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+}
+//浮动
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.clearfloat{
+	zoom:1;
+	&:after{
+		display: block;
+		clear: both;
+		content: " ";
+		visibility: hidden;
+		height: 0;
+	}
+}
+//各种border
+.line(top,@w:1px,@c:#ccc){
+	border-top: @w solid @c;
+}
+.line(bottom,@w:1px,@c:#ccc){
+	border-bottom: @w solid @c;
+}
+.line(left,@w:1px,@c:#ccc){
+	border-left: @w solid @c;
+}
+.line(right,@w:1px,@c:#ccc){
+	border-right: @w solid @c;
+}
+//单行溢出省略
+.onelinehidden{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

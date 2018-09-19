@@ -1,0 +1,367 @@
+/*bannner*/
+.banner{
+	border: 1px solid #29b078;
+}
+.banner .carousel-inner .item>img{
+	width: 100%;
+}
+.banner .carousel-caption{
+	height: 100%;
+}
+.banner .carousel-caption>.verticalcenter{
+	position:relative;
+	top:50%;
+	margin-top:-3.5rem;
+	text-align: right;
+}
+.banner .carousel-caption h2{
+	font-size: 2rem;
+}
+.banner .carousel-caption h1{
+	font-size: 3rem;
+}
+.banner .carousel-caption h1>strong{
+	font-size: 5rem;
+}
+@media screen and (max-width: 414px){
+.banner .carousel-caption>.verticalcenter{
+	position:relative;
+	top:50%;
+	margin-top:-1.5rem;
+	text-align: right;
+}
+.banner .carousel-caption h2{
+	font-size: 1.5rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.banner .carousel-caption h1{
+	font-size: 2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}	
+.banner .carousel-caption h1>strong{
+	font-size: 3rem;
+}	
+}
+/*page*/
+section{
+margin-bottom: 6.5rem;
+}
+section>h2{
+	font-size: 0.9rem;
+	line-height:1.3rem;
+	text-align: center;
+
+}
+/*feature*/
+.feature {
+	text-align: center;
+	font-size: 0.8rem;
+}
+.feature b{
+	line-height: 4rem;
+}
+.feature p{
+	color: #ccc;
+	text-align:justify;
+}
+
+@media screen and (max-width: 767px){
+	.feature p{
+	color: #ccc;
+	text-align:center;
+}
+	.feature .rocket,
+	.feature .book{
+	margin-bottom: 2rem;
+	}
+}
+.feature .rocket>div,
+.feature .book>div,
+.feature .effect>div,
+.feature .learner>div:first-child{
+	height: 3.1rem;
+}
+.feature .rocket div>span{
+	display: inline-block;
+	vertical-align:bottom;
+	width: 2.2rem;
+	height: 3.1rem;
+	background: url("../img/rocket.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.feature .book div>span{
+	display: inline-block;
+	margin-top:0.7rem;
+	width: 3.0rem;
+	height: 2.4rem;
+	background: url("../img/book.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.feature .effect div>span{
+	display: inline-block;
+	margin-top:0.3rem;
+	width: 2.6rem;
+	height: 2.8rem;
+	background: url("../img/effect.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.learner p:nth-child(even){
+	color:#29b078;
+}
+.feature .learner p:nth-child(even) i{
+	display: inline-block;
+	width: 0.6rem;
+	height: 0.6rem;
+	background: url("../img/learner.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.learner p:nth-child(odd){
+	line-height: 2rem;
+}	
+
+/*studystep*/
+.studystep>ul{
+	width: 100%;
+}
+.studystep>ul>li{
+	display: inline-block;/*li Y不一致 float会导致第五个错位*/
+	margin-top:3rem;
+}
+.studystep>ul .four{
+	display: none;
+}
+.stepitem{
+	width: 22%;
+	position: relative;
+	padding: 1rem 0.5rem;
+	vertical-align:middle;	
+}
+.stepitem>.stepnum{
+	position:absolute;
+	top: 50%;
+	margin-top: -1.75rem;
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 3.5rem;
+	background-color: #fff;
+	box-shadow: 2px 2px 5px #999;
+	text-align: center;
+}
+.stepitem>.stepnum>b{
+	font-size: 0.9rem;
+	line-height: 3.5rem;
+}
+.stepitem>.stepcontent{
+	margin-left: 4rem;
+	font-size: 0.7rem;
+	line-height: 1.5;
+}
+.toright{
+	width: 4%;
+	height: 2rem;
+	text-align: center;
+	line-height: 2rem;
+	vertical-align:middle;
+}
+.toright>i{
+	display: inline-block;
+	vertical-align: middle;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: url("../img/right.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+@media screen and (min-width:415px) and (max-width:767px){
+	.studystep>ul>li{
+		display: block;
+		width: 50%;
+		margin: auto;
+	}
+	.stepitem>.stepnum{
+		top: 50%;
+		margin-top: -1.5rem;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 3rem;
+	}
+	.studystep>ul>.toright{
+		display: none;
+	}
+}
+@media screen and (max-width:414px){
+	.studystep>ul>li{
+		display: block;
+		width: 70%;
+		margin: auto;
+	}
+	.studystep>ul>.toright{
+		display: none;
+	}
+}
+/*studentshow*/
+.studentshow h2{
+	margin-bottom: 4rem;
+}
+.showcard{
+	padding: 0.75rem;
+}
+.showcontent{
+	padding: 0 1.5rem 2rem;
+	font-size: 0.8rem;
+	background-color: #fff;
+	border: 1px #999 solid;
+	box-shadow: 2px 2px 5px #999;
+}
+.showcard .profile{
+	margin: 0.8rem auto;
+	width: 5.4rem;
+	height: 5.4rem;
+	background: url("../img/show.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.showcard>.showcontent>b{
+	display: block;
+	margin: 0 auto;
+	line-height: 3rem;
+	text-align: center;
+}
+.showcard>.showcontent>p{
+	width:100%;
+	margin: 0 auto;
+	color: #ccc;
+	text-align:left;
+}
+.studentshow>p{
+	text-align: center;
+}
+.studentshow>p>span{
+	display: inline-block;
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 0.7rem;
+	border: 1px solid #999;
+	background-color: #fff;
+}
+.studentshow p>.act{
+	background-color: #29b078;	
+}
+/*战略合作企业*/
+.corporation>h2{
+	margin-bottom: 3.5rem;
+}
+.corporation>.company{
+	width: 100%;
+}
+.corporation>.company>.companybox{
+	display: inline-block;
+	width: 19%;
+	margin-left: 1%;
+	height: 9rem;
+	background-color: #fff;
+	line-height: 9rem;
+	text-align: center;
+}
+.corporation>.company div:first-child{
+	margin-left:0.5%;
+}
+.corporation>.company>.companybox:hover{
+	box-shadow: 0px 0px 5px 5px #999;
+	-moz-box-shadow: -2px -2px 5px #999, 2px 2px 5px #999;/* 老的 Firefox */
+}
+.corporation>.company>.companybox .al{
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	width: 7rem;
+	height: 3rem;
+	background: url("../img/al.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.corporation>.company>.companybox .jsy{
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	width: 2.6rem;
+	height: 3rem;
+	background: url("../img/jsy.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.corporation>.company>.companybox .hx{
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	width: 6.7rem;
+	height: 2.8rem;
+	background: url("../img/hx.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.corporation>.company>.companybox .ytx{
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	width: 8.7rem;
+	height: 2.8rem;
+	background: url("../img/ytx.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.corporation>.company>.companybox .qn{
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	width: 6.2rem;
+	height: 2.8rem;
+	background: url("../img/qn.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+/*link to other web*/
+.otherweb{
+	margin-bottom: 0;
+}
+.otherweb h2{
+	margin-bottom: 1.5rem;
+}
+.otherweb .weblist{
+	width: 100%;
+}
+.weblist li{
+	float: left;
+	width: 10%;
+	height: 1.5rem;
+	font-size: 0.7rem;
+	line-height: 1.5rem;
+	color: #999;
+	list-style-position:inside;
+	list-style-type: disc;
+}
+.weblist li a{
+	display: inline-block;
+	color: #999;
+}
+@media screen and (min-width:600px) and (max-width:1199px){
+.weblist li{
+	width: 20%;	
+}
+}
+@media screen and (max-width:600px){
+.weblist li{
+	width: 33.33%;	
+}
+/*footer*/
+footer{
+	margin-top: 0;
+}

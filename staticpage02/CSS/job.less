@@ -1,0 +1,135 @@
+@import (reference) "components/mixins.less";
+/*页内导航*/
+.innernavbar{
+	.innernavbar-link{
+		padding: 25/@r 0;
+		.single-text(0.8rem,1.5);
+		.line(top);
+		.line(bottom);
+		a{
+			display: inline-block;
+			margin-right: 1.75rem;
+			padding: 2px;
+			color: @ft-black;			
+		}
+		//active状态
+		&:hover> .active{
+			background: @bg-grey;
+			color: @ft-black;
+		}
+		.active,
+		>a:hover, 
+		> .active:hover{
+			background-color: @ft-green;
+			color: #fff;
+		}
+	}	
+}
+/*工作列表*/
+.joblist h2{
+	margin-left: @gap;
+	padding:1.5rem 0;
+	font-size: @ft-nor;
+	.line(bottom); 
+}
+.hoverbox{
+	position: relative;
+	padding: 2.5rem 0.5rem 0.5rem 0.5rem;
+	&:hover .mask{
+		background: rgba(0,0,0,0.5);
+		z-index: 2;
+		p{
+			font-size: @ft-nor;
+			color: rgba(255, 255, 255, 1);
+			&:first-child{
+				line-height: 3rem;
+				text-align: center;
+			}
+		}
+	}
+	&:hover .jobcard{
+		z-index: 1;
+	}
+}
+.jobcard{
+	padding-top: 1rem;
+	background-color: @bg-white;
+	border: 1px solid @br-bgrey;
+	box-shadow: 2px 2px 1px @br-bgrey;
+}
+.mask{
+	position: absolute;
+	top: 1.8rem;
+	left: 0.1rem;
+	box-sizing: border-box;	
+	padding: 3rem 2rem;
+	height: 25rem;
+	.rounded-corners(0.5rem);
+	p{
+		color: rgba(255, 255, 255, 0);		
+	}
+}
+/*jobcard内部*/
+.jobcard>.container{
+	width: 100%;
+}
+.jobcard{
+	.avatar{
+		.left;
+		margin:0 0.5rem 1rem 0.5rem ;
+		background: url("../img/job_avatar.png") no-repeat;
+		.icon(7rem,7rem);
+	}	
+	>h3{
+		.single-text(0.8rem,2rem);
+	}
+	>p{
+		margin: 0 0.5rem 1rem 0;
+		height: 5rem;
+		min-height: 5rem;
+		.single-text(0.7rem,1.3);
+		text-align: justify;
+		overflow: hidden;
+	}
+	>b{
+		display: block;
+		padding-left: 0.5rem;
+		.single-text(@ft-small,2rem);
+	}
+	h4{
+		padding:0 .5rem;
+		.single-text(@ft-min,2rem);
+		color: @ft-grey;
+	}
+	>h3,
+	h4{
+		.onelinehidden;		
+	}	
+	>b,
+	>h4,
+	.row{
+		.line(top,1px,@br-bgrey);
+	}
+	.star{
+		background:url("../img/job_star.png") no-repeat;
+		.icon(0.6rem,0.6rem,middle);
+	}
+	.money h4{
+		border: none;
+		line-height: 6rem;
+	}
+	.money li{
+		.single-text(12px,2rem);
+		padding-left: 1.25rem;
+		padding-right: 0.5rem;
+		.line(bottom,1px,@br-bgrey);
+		.line(left,1px,@br-bgrey);
+		&:last-child{
+			border-bottom: none;
+		}
+		span{
+			display: block;
+			.right;
+		}
+	}
+}

@@ -1,0 +1,32 @@
+body,div,dl,dt,ul,li,h1,h2,h3,h5,h4,h6,input,form,a,p,textaere{
+	margin: 0;
+	padding: 0;
+}
+
+ol,ul,li{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+	display: block;
+}
+a:hover{
+	text-decoration: none;
+}
+img{
+	border: none;
+	display: block;
+}
+.clearfloat{
+	zoom: 1;
+}
+.clearfloat:after{
+	display: block;
+	clear: both;
+	content: " ";
+	visibility: hidden;
+	height: 0;
+}
+*:focus{
+	outline: none;
+}

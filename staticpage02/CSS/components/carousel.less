@@ -1,0 +1,69 @@
+@import (reference) "mixins.less";
+#carouselbox {
+    overflow: hidden; 
+    position: relative; 
+    width: 100%;
+    height: 30vw;
+    .carousel-inner{ 
+    	position: absolute; 
+    	width: 500%;
+    	.list-item { 
+    		position: relative;
+    		.left; 
+    		width: 20%;
+    		img{
+    			width: 100%;
+    		}
+    	}
+    	.carousel-caption{
+    		position: absolute;
+    		top: 50%;
+    		right: 10%;
+    	}
+    }
+    .carousel-indicators { 
+	    position: absolute; 
+	    bottom: 1rem; 
+	    left: 50%;
+	    margin-left: -(1*3 + 2*0.8)/2rem;
+	    span {  
+		    .left; 
+		    margin-right: 0.8rem;
+		    .icon-dot(0.8rem,0.8rem);
+		    .rounded-corners(50%);
+		    border: 1px solid #fff;
+		    background:rgba(255, 255, 255,.1);
+		    cursor: pointer; 
+		}
+		.on{  
+			background:@bg-green;
+		}
+	}
+	.carousel-control{
+		display: none;
+		position: absolute;
+		width: 6rem;
+		height: 100%;
+		line-height: 30vw;
+		text-align: center;
+		font-size: 2rem;
+		font-weight: bold;
+		color: #fff;		
+		background: rgba(0,0,0,.1);
+		cursor: pointer;
+		&:hover{
+			background: rgba(0,0,0,.2);
+		}
+		&:first-child{
+			left: 0;
+		}
+		&:last-child{
+			right: 0;
+		}
+	}	
+	&:hover .carousel-control { 
+		display: block;
+	}
+}
+
+

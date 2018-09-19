@@ -1,0 +1,184 @@
+/*页内导航*/
+.innernavbar>p{
+	padding:1.5rem 0px;
+	font-size: 16px;
+	/*background-color: #fff;*/
+}
+.innernavbar a{
+	display: inline-block;
+	color: #000;
+}
+.innernavbar>p:last-child{
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.innernavbar>p:last-child>span{
+	color: #ccc;
+}
+.innernavbar>p:last-child>a{
+	margin-right:1.75rem;
+	padding: 2px;
+}
+.innernavbar>p:last-child> .active{
+	background-color: #29b078;
+	color: #fff;
+}
+.innernavbar>p:last-child:hover> .active{
+	background: #fafafa;
+	color: #000;
+}
+.innernavbar>p:last-child>a:hover, 
+.innernavbar>p:last-child> .active:hover{
+	background-color: #29b078;
+	color: #fff;
+}
+/*工作列表*/
+.joblist h2{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 1.5rem 15px;
+	border-bottom: 1px solid #999;
+	/*background: pink;*/
+}
+.joblist .hoverbox{
+	position: relative;
+	padding: 2.5rem 0.5rem 0.5rem 0.5rem;
+	/*background-color: green;*/
+}
+.joblist .hoverbox:hover .mask{
+	background:rgba(0,0,0,0.5); 
+	z-index: 2;
+}
+.joblist .hoverbox:hover .jobcard{
+	z-index: 1;
+}
+.joblist .hoverbox:hover .mask p{
+	color: rgba(255, 255, 255, 1);
+}
+.jobcard{
+	padding-top: 1rem;
+	background-color: #fff;
+	border: 1px solid #999;
+	box-shadow: 2px 2px 1px #999;
+}
+.mask{
+	position: absolute;
+	top: 2.3rem;
+	left: 0.1rem;
+	padding: 3rem 2rem;
+	height:24rem;
+	border-radius: 0.5rem;
+	background:rgba(0,0,0,0);
+}
+.mask>p{
+	color: rgba(255, 255, 255, 0);
+	font-size: 16px;
+}
+ .mask>p:first-child{
+	line-height: 3rem;
+	text-align: center;
+}
+
+/*jobcard内部*/
+.jobcard>.container{
+	width: 100%;
+}
+.jobcard>.avatar{
+	width: 7rem;
+	height: 7rem;
+	margin:0 0.5rem 1rem 0.5rem ;
+	background: url("../img/job_avatar.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+.jobcard>h3{
+	font-size: 0.8rem;
+	line-height: 2rem;
+	font-weight: bold;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.jobcard>p{
+	position: relative;
+	font-size:0.7rem;
+	line-height:1.3;
+	text-align: justify;
+	height: 5rem;
+	max-height: 5rem;
+	margin:0 0.5rem 1rem 0;
+	overflow: hidden;
+
+}
+/*失败的结束小圆点
+@media screen and (max-width: 340px){
+	.jobcard>p:after{
+		content:"...";
+	    font-weight:bold;
+	    position:absolute;
+	    bottom:0;
+	    right:0;
+	    padding:0 10px 1px 45px;
+	    background:;
+	}
+
+}*/
+.jobcard>b{
+	display: block;
+	font-size: 14px;
+	line-height: 2rem;
+	padding-left: 0.5rem;
+	border-top: 1px solid #999;
+}
+.jobcard>.container>.row{
+	border-top: 1px solid #999;
+}
+.jobcard .fixborder{
+	border-right: 1px solid #999;
+}
+.jobcard>h4{
+	border-top: 1px solid #999;
+}
+.jobcard h4{
+	font-size: 12px;
+	line-height: 2rem;
+	color: #999;
+	padding: 0px 0.5rem;
+	overflow: hidden;  
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+.jobcard .star{
+	display: inline-block;
+	width:0.6rem;
+	height:0.6rem;
+	background:url("../img/job_star.png") no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.jobcard .money h4{
+	border: none;
+	line-height: 6rem;
+}
+
+.jobcard .money li{
+	font-size: 12px;
+	line-height: 2rem;
+	padding-left: 1.25rem;
+	padding-right: 0.5rem;
+	border-bottom:1px solid #999;
+	border-left: 1px solid #999;
+}
+.jobcard .money li:last-child{
+	border-bottom: none;
+
+}
+.jobcard .money li>span{
+	display: block;
+	float: right;
+}
+
+
+
+

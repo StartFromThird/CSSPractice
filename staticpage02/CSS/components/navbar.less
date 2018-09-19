@@ -1,0 +1,98 @@
+@import (reference) "mixins.less";
+.navbar-fixed-top{
+	.fix-top;
+	left: 0;
+	right: 0;
+	z-index: 3;
+}
+.navbar-right{
+	.right;
+	.clearfloat;
+	>li{
+		.left;
+	}
+}
+/*响应式导航*/
+.navbar{
+	background-color: @bg-green;
+	height: unit(@nav-H)/@r;
+}
+.navbar-header{
+	line-height: unit(@nav-H)/@r;
+}
+@media screen and (max-width:767px){
+	.navbar{
+		height: @nav-xs-H;
+	}
+	.navbar-header{
+		.nav-text(@nav-xs-H);
+		.flex-container();
+		a,
+		button{
+		align-self: center;
+		}
+		button{
+			width: 32px;
+			height: 30px;
+			box-sizing: border-box;
+			border: 1px solid #000;
+			background:rgba(0,0,0,0);
+		}		
+		.navbarbtn{
+			padding: 6px 6px 2px 6px;
+			.icon-bar{
+				.icon-dot(20px,4px);
+				.line(top,3px,#fff);
+			}
+		} 		
+
+	}
+}
+@media screen and (min-width:768px){
+
+	button{
+		display: none;
+	}
+}
+
+//mobile下拉栏
+@media screen and (max-width:767px){
+	.navbar-list{
+		display: none;
+		margin: 0 -@gap;
+		.line(top,4px,#fff); 
+		ul{
+			width: 100%;
+		}
+		li{
+			float: none;
+			background:@bg-green;
+			a{
+				padding: @gap;
+				line-height: 1.5;
+				text-align: left;
+			}
+		}
+	}
+}
+//pc左侧导航
+@media screen and (min-width:768px){
+	.navbar-list{
+		display: block!important;
+		margin-top: -(unit(@nav-H)/@r);
+		line-height: unit(@nav-H)/@r;	
+	li{
+		float: left;
+		a{
+			padding: 0 1rem;			
+			text-align: center;
+			font-size:@ft-big;
+		}
+	}	
+	}
+}
+
+
+
+
+

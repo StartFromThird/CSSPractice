@@ -1,0 +1,100 @@
+.recommendbanner{
+	border-top: 1px solid #f1a750;
+}
+.recommendbanner img{
+	width: 100%;
+}
+.innernavbar p{
+	line-height: 4rem;
+}
+.innernavbar a{
+	display: inline-block;
+	color: #000;
+}
+
+.leftform,
+.rightform{
+	padding:0.75rem;
+}
+.leftform>div,
+.rightform>article{
+	background: #fff;
+	border: 1px solid #999;
+}
+/*leftform*/
+.leftform ul>li:first-child{
+	width: 100%;
+	height: 3rem;
+	font-size: 0.8rem;	
+	border-bottom: 1px solid #999;
+}
+.leftform ul>li:first-child:before{
+	display: none;
+}
+.leftform ul>li:first-child h3{
+	width: 100%;
+	height: 3rem;	
+	line-height: 3rem;			
+	text-align: center;
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;		
+}
+.leftform ul .active:before{
+	background-color: #f9a372;
+}
+.leftform ul>li{
+	margin: 0 auto;
+	width: 5rem;
+	height: 2.5rem;
+	padding-left: 0.5rem;
+	font-size: 0.7rem;
+	line-height: 2.5rem;
+	color: #29b078;
+	text-align: left;
+}
+@media screen and (max-width: 767px){	
+.leftform ul>li{
+	width: 7rem;
+}
+}
+.leftform ul>li:before{
+	display: inline-block;
+	content: " ";
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-right: 2px;
+	border-radius: 0.5rem;
+	border: 1px solid #f9a372;
+}
+/*rightform*/
+article>div>p{
+	font-size:0.7rem;
+	line-height: 1.5rem; 
+	margin-bottom: 1rem;
+	color: #ccc;
+}
+article .firstpart{
+	position: relative;
+	padding: 1rem 3rem;
+}
+article .leftpic{
+	position: absolute;
+	top: 50%;
+	margin-top: -1.3rem;
+	padding: 0;
+	width: 9rem;
+}
+
+article .leftpic>img{
+	width: 80%;
+	margin: 0 auto;
+}
+article .firstpart>p{
+	margin-left: 9rem;
+}
+
+article div:last-child{
+	border-top: 1px solid #999;
+	padding: 2rem 3rem;
+}
