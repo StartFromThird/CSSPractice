@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>clearFloat</title>
+  <style>
+  .container {
+    background: #f17575;
+  }
+  .item {
+    height: 100px;
+    width: 100px;
+    background: #ccc;
+  }
+  .floatL {
+    float: left;
+  }
+  .clearfloat {
+    zoom: 1;
+  }
+  .clearfloat::after {
+    clear: both;
+    display: block;
+    content: " ";
+    visibility: hidden;
+    height: 0;
+  }
+  .bfc {
+    overflow: hidden;
+  }
+  </style>
+</head>
+<body>
+  方法一：底部插入伪类来clear: both;
+  <div class="container clearfloat">
+    <div class="item floatL"></div>
+  </div>
+  方法二：父元素BFC
+  <div class="container bfc">
+    <div class="item floatL"></div>
+    <div class="item floatR"></div>
+  </div>
+</body>
+</html>

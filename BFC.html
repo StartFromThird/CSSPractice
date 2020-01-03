@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BFC</title>
+  </head>
+  <style>
+    .a, .b, .c, .d {
+      background: #f17575;
+      overflow: hidden;
+    }
+    .a1, .b1, .c1, .d1 {
+      height: 100px;
+      width: 100px;
+      background: #ccc;
+    }
+    .a1, .b1 {
+      margin: 20px;
+    }
+    .cContain {
+      width: 250px;
+      background: #ff0;
+    }
+    .c1, .d1 {
+      float: left;
+    }
+  </style>
+  <body>
+    <h2>创建BFC</h2>
+    1. float值不为none，<br />
+    2. position值 不为static和relative就创建了BFC；<br />
+    3. display属性inline-block, table-cell, table等等都可以；<br />
+    4. overflow: hidden/auto/scroll（不为visible即可））<br />
+    <h2>BFC渲染规则</h2>
+    1. 同BFC 子元素的垂直方向 margin 会发生重叠；<br />
+    2. 一个BFC在页面上是一个独立的容器，里外元素不会相互影响；<br />
+    3. BFC的区域不会与 浮动元素的box重叠；<br />
+    4. 计算BFC高度时，浮动 子元素也会参与计算<br />
+    <!-- demo1 -->
+    <div class="a">
+      <div class="a1">1</div>
+    </div>
+    <!-- demo2 -->
+    <div class="b1">2</div>
+    <div class="b1">2</div>
+    <div class="b">
+      <div class="b1">2</div>
+    </div>
+    <div class="b">
+      <div class="b1">2</div>
+    </div>
+    <!-- demo3 -->
+    <div class="cContain">
+      <div class="c1">3</div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit dolorum similique a eaque saepe asperiores distinctio, dolores ea voluptates!</p>
+    </div>
+    <div class="cContain">
+      <div class="c1">3</div>
+      <p class="c">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit dolorum similique a eaque saepe asperiores distinctio, dolores ea voluptates!</p>
+    </div>
+    <!-- demo4 -->
+    <div class="d">
+      <div class="d1">4</div>
+    </div>
+  </body>
+</html>
