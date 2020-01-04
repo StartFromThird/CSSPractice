@@ -1,0 +1,92 @@
+.a {
+  color: green;
+  height: 150px;
+}
+
+.a .a1 {
+  height: 110px;
+}
+
+.a:after {
+  content: '*';
+  display: block;
+}
+
+.b {
+  -webkit-box-shadow: 2px, 2px, 4px, rgba(247, 236, 236, 0.863);
+  -moz-box-shadow: 2px, 2px, 4px, rgba(247, 236, 236, 0.863);
+  -ms-box-shadow: 2px, 2px, 4px, rgba(247, 236, 236, 0.863);
+  box-shadow: 2px, 2px, 4px, rgba(247, 236, 236, 0.863);
+}
+
+.c {
+  color: yellow;
+}
+
+.col-1 {
+  width: 33.33333%;
+}
+
+.col-2 {
+  width: 66.66667%;
+}
+
+.col-3 {
+  width: 100%;
+}
+
+.item-1 {
+  width: 1px;
+}
+
+.item-2 {
+  width: 2px;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.normal-text {
+  color: blue;
+}
+
+.fail-text {
+  color: red;
+}
+
+.great-text {
+  color: green;
+}
+
+.col1-1 {
+  width: 33.33333%;
+}
+
+.col1-2 {
+  width: 66.66667%;
+}
+
+.col1-3 {
+  width: 100%;
+}
+
+.d, .e {
+  width: 0.53333rem;
+}
+
+.d.d1, .d1.e {
+  color: green;
+}
+
+.e {
+  border: 3px solid #f00;
+}

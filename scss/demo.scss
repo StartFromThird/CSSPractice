@@ -1,0 +1,85 @@
+// 变量
+$headings-color: green;
+$baseH: 150px;
+$innerH: 20px;
+// 变量默认值
+$baseH: 200px !default;
+.a {
+  color: $headings-color;
+  height: $baseH;
+  .a1 {
+    height: $baseH - $innerH * 2;
+  }
+  &:after {
+    content:'*';
+    display: block;
+  }
+}
+// mixin
+@mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x, $y, $blur, $c;
+  -moz-box-shadow: $x, $y, $blur, $c;
+  -ms-box-shadow: $x, $y, $blur, $c;
+  box-shadow: $x, $y, $blur, $c;
+}
+.b {
+  @include box-shadow(2px, 2px, 4px, rgba(247, 236, 236, 0.863));
+}
+// @if @else if @else
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  }
+  @else if $val == alert {
+    color: yellow;
+  }
+  @else if $val == success {
+    color: green;
+  }
+  @else {
+    color: black;
+  }
+}
+.c {
+  @include text-effect(alert);
+}
+// @for
+@for $i from 1 through 3 {
+  .col-#{$i} { width: 100%/3 * $i; }
+}
+@for $i from 1 to 3 {
+  .item-#{$i} { width: 1px * $i; }
+}
+// @each
+@each $color in blue, red, green {
+  .#{$color}-text {color: $color;}
+}
+$colors: (normal: blue, fail: red, great: green);
+@each $key, $color in $colors {
+  .#{$key}-text {color: $color;}
+}
+// @while
+$x: 1;
+@while $x < 4 {
+  .col1-#{$x} { width: 100%/3 * $x;}
+  $x: $x + 1;
+}
+// 自定义函数
+$rem1: 100px;
+@function px2rem($px) {
+  $rem: 37.5px;
+  @debug $rem1;
+  @return ($px / $rem) + rem;
+}
+//@debug $rem;
+.d {
+  width: px2rem(20px);
+  &.d1 {
+    color: green;
+  }
+}
+// @extend
+.e {
+  @extend .d;
+  border: 3px solid #f00;
+}
